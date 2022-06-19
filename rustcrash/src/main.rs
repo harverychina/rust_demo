@@ -18,6 +18,40 @@ fn main() {
     // print!("{}{}", char_ascii, char_emoji);
 
     let array = [1, 2, 3, 4, 5];
-    print!("{}", array[0]);
-    print!("{}", array[1]);
+    println!("{}", array[0]);
+    println!("{}", array[1]);
+
+    let mut number = 1;
+    while number != 4 {
+        println!("{}", number);
+        number += 1;
+    }
+    println!("EXIT");
+
+    fn gcd(m: u64, n: u64) -> u64 {
+        assert!(m != 0 && n != 0);
+        if m > n {
+            return gcd(m - n, n);
+        };
+        if m < n {
+            return gcd(n - m, m);
+        };
+        m
+    }
+
+    println!("gcd(2, 1) = {}", gcd(2, 1));
+
+
+    mod tests{
+        #[test]
+        fn exploratioin(){
+            assert_eq!(2 + 2, 4);
+        }
+
+        #[test]
+        fn another() {
+            panic!("Make this test fail");
+        }
+    }
+
 }
